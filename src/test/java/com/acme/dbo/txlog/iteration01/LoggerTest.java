@@ -32,16 +32,19 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
         //region then
         assertSysoutContains("primitive: ");
-        assertSysoutEquals("primitive: 1\r\nprimitive: 0\r\nprimitive: -1\r\n");
+        assertSysoutEquals(
+                "primitive: 1" + System.lineSeparator() +
+                        "primitive: 0" + System.lineSeparator() +
+                        "primitive: -1" + System.lineSeparator());
         //endregion
     }
 
     @Test
     public void shouldLogByte() throws IOException {
         //region when
-        Facade.log((byte)1);
-        Facade.log((byte)0);
-        Facade.log((byte)-1);
+        Facade.log((byte) 1);
+        Facade.log((byte) 0);
+        Facade.log((byte) -1);
         //endregion
 
         //region then
